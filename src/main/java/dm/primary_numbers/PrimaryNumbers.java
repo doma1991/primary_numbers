@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
 
 public class PrimaryNumbers {
 
@@ -33,37 +32,37 @@ public class PrimaryNumbers {
         List<Integer> numbers3 = numbers.subList(4, 8);
         List<Integer> numbers4 = numbers.subList(8, 12);
         List<Integer> numbers5 = numbers.subList(12, 15);
-
+        int i = 0;
             ExecutorService executorService = Executors.newFixedThreadPool(4);
+
             executorService.submit(() -> {
                 for (Integer number : numbers2) {
-                    if (isItPrime(number)) {
+                    if (isItPrime(number) && n > list.size()) {
                         list.add(number);
                     }
                 }
             });
             executorService.submit(() -> {
                 for (Integer number1 : numbers3) {
-                    if (isItPrime(number1)) {
+                    if (isItPrime(number1) && n > list.size()) {
                         list.add(number1);
                     }
                 }
             });
             executorService.submit(() -> {
                 for (Integer number1 : numbers4) {
-                    if (isItPrime(number1)) {
+                    if (isItPrime(number1) && n > list.size()) {
                         list.add(number1);
                     }
                 }
             });
             executorService.submit(() -> {
                 for (Integer number1 : numbers5) {
-                    if (isItPrime(number1)) {
+                    if (isItPrime(number1) && n > list.size()) {
                         list.add(number1);
                     }
                 }
             });
-
 //        List<Integer> x = new ArrayList<Integer>();
 //        x.add(1);
 //        x.subList(0, 4);
